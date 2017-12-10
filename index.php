@@ -1,14 +1,30 @@
 <?php session_start(); ?>
+<?php /* isset($_SESSION['user']) ? header('location:dashboard.php') : header('location:index.php'); */ ?>
 <!DOCTYPE>
 <html>
     <head>
         <title>Login page - PHP</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <style>
+            .login-form-design{
+                background-color: #fff;
+                width:35%;
+                height:auto;
+                margin: 0px auto;
+                padding:12px;
+            }
+            .header-login-form{
+                font-family: Georgia;
+                font-size: 16px;
+                font-weight: Bold;
+            }
+        </style>
     </head>
     <BODY>
-    	<nav class="navbar navbar-default">
+    	<nav class="navbar navbar-inverse">
     		<div class="container-fluid">
     			<div class="navbar-header">
     				<a href="#" class="navbar-brand" id="sitename">PHP Login page</a>
@@ -23,12 +39,15 @@
     	</nav>
    		<div class="container">
    			<div class="login-form-design">
-    			<input type="text" id="username" class="form-control">
+                <div class="text-center header-login-form" style="padding: 12px;">PHP Login page</div>
+            <div >
+    			<input type="text"    id="username" placeholder="Enter username" maxlength="25" class="form-control">
     		</div>
     		<div>
-    			<input type="password" id="password" class="form-control">
+    			<input type="password" id="password" placeholder="Enter password" maxxlength="8" class="form-control">
     		</div>
     		<BUTTON class="btn btn-success" id="btnLogin">Login</BUTTON>
+        </div>
     	</div>
     </BODY>
 </html>
@@ -58,7 +77,6 @@
                 { console.log('login failure'); return; }
 
                 window.location.href = 'dashboard.php';
-
             },
             error: function(err){
                 console.log('error :' + err.responseText.toString());
