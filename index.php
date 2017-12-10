@@ -40,13 +40,16 @@
    		<div class="container">
    			<div class="login-form-design">
                 <div class="text-center header-login-form" style="padding: 12px;">PHP Login page</div>
-            <div >
-    			<input type="text"    id="username" placeholder="Enter username" maxlength="25" class="form-control">
+            <div style="padding:12px;">
+    			<input type="text"     id="username" placeholder="Enter username" maxlength="25" class="form-control">
     		</div>
-    		<div>
+    		<div style="padding:12px;">
     			<input type="password" id="password" placeholder="Enter password" maxxlength="8" class="form-control">
     		</div>
-    		<BUTTON class="btn btn-success" id="btnLogin">Login</BUTTON>
+            <div style="padding:12px;">
+    		      <BUTTON class="btn btn-success" id="btnLogin">Login</BUTTON>
+            </div>
+            <div id="err"></div>
         </div>
     	</div>
     </BODY>
@@ -74,7 +77,13 @@
 			success: function(result){
                 
                 if(result == 'invalid login')
-                { console.log('login failure'); return; }
+                { 
+                    setTimeout($('#err').text('Invalid Username and Password'), 3000);
+                    $('#username').val('');
+                    $('#password').val('');
+                    $('#username').focus();
+                    return;
+                }
 
                 window.location.href = 'dashboard.php';
             },

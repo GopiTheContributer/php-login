@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+
 <!DOCTYPE>
 <html>
     <head>
@@ -24,7 +25,7 @@
     	</nav>
    		<div class="container">
    			<div class=""  id="welcome-user">
-   				<?php echo isset($_SESSION['user']) ? 'Welcome ' . $_SESSION['user'] : 'Session is not set'; ?>
+   				<?php echo isset($_SESSION['user']) ? 'Welcome ' . $_SESSION['user'] : header('location: index.php'); ?>
    			 </div>
     	</div>
     </BODY>
