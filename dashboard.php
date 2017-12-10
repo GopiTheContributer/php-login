@@ -8,7 +8,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <BODY>
-    	<nav class="navbar navbar-default">
+    	<nav class="navbar navbar-inverse">
     		<div class="container-fluid">
     			<div class="navbar-header">
     				<a href="#" class="navbar-brand" id="sitename">PHP Login page</a>
