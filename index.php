@@ -21,6 +21,13 @@
                 font-size: 16px;
                 font-weight: Bold;
             }
+
+            .login-error-msg{
+                background-color: green;
+                padding: 12px;
+                border-radius: 12px;
+                color: #fff;
+            }
         </style>
     </head>
     <BODY>
@@ -78,10 +85,14 @@
                 
                 if(result == 'invalid login')
                 { 
-                    setTimeout($('#err').text('Invalid Username and Password'), 3000);
+                    $('#err').fadeIn(1000);
+                    $('#err').empty().addClass('login-error-msg').text('Invalie username and password.');
+                    setTimeout(function () { $('#err').fadeOut(); }, 3000);
+
                     $('#username').val('');
                     $('#password').val('');
                     $('#username').focus();
+
                     return;
                 }
 
