@@ -56,7 +56,7 @@
             <div style="padding:12px;">
     		      <BUTTON class="btn btn-success" id="btnLogin">Login</BUTTON>
             </div>
-            <div id="err">local error </div>
+            <div id="err">local errora </div>
         </div>
     	</div>
     </BODY>
